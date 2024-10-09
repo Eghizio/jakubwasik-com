@@ -16,7 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Jakub Wąsik",
   description:
-    "Personal page of Jakub Wąsik - Software Engineer, Mentor & Trener IT, Public Speaker",
+    "Personal page of Jakub Wąsik - Full-Stack Software Engineer | Mentor IT | Public Speaker | Lecturer",
 };
 
 export default function RootLayout({

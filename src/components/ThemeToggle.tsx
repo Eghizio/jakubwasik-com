@@ -1,7 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { SunMoon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+
+type Theme = "light" | "dark";
+
+const LOCAL_STORAGE_KEY = "theme";
 
 const isUserPreferingDarkMode = () =>
   typeof window !== "undefined" &&
@@ -9,23 +14,28 @@ const isUserPreferingDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 export const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(isUserPreferingDarkMode());
+  const [theme, setTheme] = useLocalStorage<Theme>(
+    LOCAL_STORAGE_KEY,
+    isUserPreferingDarkMode() ? "dark" : "light"
+  );
 
   const toggleTheme = () => {
-    setDarkMode((previousTheme) => !previousTheme);
+    setTheme((previousTheme: Theme) =>
+      previousTheme === "light" ? "dark" : "light"
+    );
   };
 
   useEffect(() => {
-    if (darkMode) {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [darkMode]);
+  }, [theme]);
 
   useEffect(() => {
     const updateThemePreference = (event: MediaQueryListEvent) =>
-      setDarkMode(event.matches);
+      setTheme(event.matches ? "dark" : "light");
 
     window
       .matchMedia("(prefers-color-scheme: dark)")

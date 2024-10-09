@@ -22,7 +22,7 @@ export default function Home() {
     <main>
       <ProfileCard
         name="Jakub Wąsik"
-        description="Your tagline or brief description"
+        description="Full-Stack Software Engineer | Mentor IT | Lecturer | Public Speaker"
         links={links}
       />
     </main>
