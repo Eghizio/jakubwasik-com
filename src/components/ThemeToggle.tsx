@@ -45,7 +45,7 @@ export const ThemeToggle = () => {
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .removeEventListener("change", updateThemePreference);
-  }, [toggleTheme]);
+  }, [setTheme]);
 
   return (
     <Button
