@@ -4,7 +4,7 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
   const [value, setValue] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem(key) || String(defaultValue));
-    } catch (error) {
+    } catch (_) {
       return defaultValue;
     }
   });
