@@ -19,7 +19,7 @@ const links = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex items-center justify-center p-4">
+    <main>
       <ProfileCard
         name="Jakub Wąsik"
         description="Your tagline or brief description"
