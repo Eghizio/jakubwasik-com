@@ -18,6 +18,32 @@ export const metadata: Metadata = {
   title: "Jakub Wąsik",
   description:
     "Personal page of Jakub Wąsik - Full-Stack Software Engineer | Mentor IT | Public Speaker | Lecturer",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/static/favicon.svg",
+        href: "/static/favicon.svg",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/static/favicon.svg",
+        href: "/static/favicon.svg",
+      },
+    ],
+    apple: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/static/favicon.svg",
+        href: "/static/favicon.svg",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/static/favicon.svg",
+        href: "/static/favicon.svg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
